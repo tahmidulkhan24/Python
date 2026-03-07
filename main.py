@@ -4,32 +4,50 @@ from library import Library
 library = Library()
 
 while True:
+
     print("\n1 Add Book")
     print("2 Show Books")
     print("3 Borrow Book")
     print("4 Return Book")
     print("5 Exit")
 
-    ch=input("Enter choice:")
+    try:
 
-    if ch=="1":
-        title = input("Book title: ")
-        author = input("Author: ")
+        ch = input("Enter choice: ")
 
-        book=Book(title,author)
+        if ch == "1":
 
-        library.add_books(book)
-    elif ch=="2":
-        library.show_books()
+            title = input("Book title: ")
+            author = input("Author: ")
 
-    elif ch=="3":
-        title=input("Enter title:")
-        library.borrow(title)
-    elif ch=="4":
-        title = input("Enter title: ")
+            book = Book(title, author)
 
-        library.return_book(title)
+            library.add_books(book)
 
-    elif choice == "5":
+        elif ch == "2":
 
-        break
+            library.show_books()
+
+        elif ch == "3":
+
+            title = input("Enter title: ")
+
+            library.borrow(title)
+
+        elif ch == "4":
+
+            title = input("Enter title: ")
+
+            library.return_book(title)
+
+        elif ch == "5":
+
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice")
+
+    except Exception as e:
+
+        print("Error occurred:", e)

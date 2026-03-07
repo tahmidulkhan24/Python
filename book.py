@@ -1,5 +1,7 @@
 class Book:
-    def __init__(self,title,auth):
-        self.title=title
-        self.auth=auth
-        self.available=True
+
+    def __init__(self, title, author):
+
+        self.title = title
+        self.author = author
+        self.available = True
